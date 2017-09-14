@@ -91,6 +91,13 @@ namespace LINQ
                 Debug.WriteLine(row);
             }
 
+            //join
+            var countriesAndCustomers = from a in addresses
+                                        join c in customers
+                                        on a.CompanyName equals c.CompanyName
+                                        select new { c.FirstName, c.LastName, a.Country };
+       
+
 
         }
         void Run()
